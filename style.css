@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0; padding: 20px;
+    background-color: #f0f2f5; color: #2d3436;
+    display: flex; flex-direction: column; align-items: center; 
+    text-align: center; transition: 0.5s ease; min-height: 100vh;
+}
+.container { width: 100%; max-width: 800px; flex: 1; }
+.bg-blob, .bg-blob2 {
+    position: fixed; width: 300px; height: 300px;
+    background: linear-gradient(135deg, #007bff, #00d2ff);
+    filter: blur(80px); opacity: 0.1; z-index: -1; border-radius: 50%;
+}
+.bg-blob { top: -50px; left: -50px; }
+.bg-blob2 { bottom: -50px; right: -50px; }
+
+h1 span {
+    background: linear-gradient(90deg, #007bff, #00d2ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+}
+.project-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 30px; border-radius: 25px;
+    max-width: 360px; margin: 20px auto;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+.project-card:hover { transform: translateY(-10px); }
+.tech-tag {
+    background: #007bff15; color: #007bff;
+    padding: 5px 12px; border-radius: 10px;
+    font-size: 0.8rem; font-weight: 600;
+}
+.project-btn {
+    display: inline-block; background: #007bff; color: white;
+    text-decoration: none; padding: 12px 30px; border-radius: 15px;
+    font-weight: 600; margin-top: 20px;
+}
+footer { margin-top: 50px; padding-bottom: 20px; opacity: 0.6; font-size: 0.9rem; }
+#theme-toggle {
+    position: fixed; top: 20px; right: 20px;
+    width: 45px; height: 45px; border-radius: 12px;
+    border: none; cursor: pointer; background: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+body.dark-mode { background-color: #0f172a; color: #f1f5f9; }
+body.dark-mode .project-card { background: #1e293b; border-color: #334155; }
+body.dark-mode #theme-toggle { background: #1e293b; color: white; }
+
+.fade-in { animation: fadeInUp 0.8s ease forwards; }
+.fade-in-delayed { opacity: 0; animation: fadeInUp 0.8s ease 0.3s forwards; }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
