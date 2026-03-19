@@ -57,3 +57,113 @@ body.dark-mode #theme-toggle { background: #1e293b; color: white; }
 .fade-in { animation: fadeInUp 0.8s ease forwards; }
 .fade-in-delayed { opacity: 0; animation: fadeInUp 0.8s ease 0.3s forwards; }
 @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+/* Раздел контактов */
+#contacts {
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+
+.contact-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.contact-item {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 15px 25px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    color: inherit;
+    font-weight: 600;
+    transition: 0.3s;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.contact-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    border-color: #007bff;
+}
+
+.contact-icon {
+    width: 25px;
+    height: 25px;
+}
+
+/* Адаптация для темной темы */
+body.dark-mode .contact-item {
+    background: #1e293b;
+    border-color: #334155;
+    color: white;
+}
+/* --- РАЗДЕЛ КОНТАКТОВ (ИСПРАВЛЕННЫЙ) --- */
+#contacts {
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+
+.contact-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.contact-item {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 15px 25px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    color: inherit;
+    font-weight: 600;
+    transition: 0.3s;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+/* Стили для иконок Font Awesome */
+.contact-icon {
+    font-size: 24px; /* Размер иконки */
+}
+
+/* Эффект при наведении на контакты */
+.contact-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+/* Фирменные цвета при наведении */
+.contact-tg:hover {
+    color: #0088cc; /* Цвет Telegram */
+    border-color: #0088cc;
+}
+
+.contact-ds:hover {
+    color: #5865F2; /* Цвет Discord */
+    border-color: #5865F2;
+}
+
+/* Адаптация для темной темы */
+body.dark-mode .contact-item {
+    background: #1e293b;
+    border-color: #334155;
+    color: white;
+}
+/* Чтобы цвета при наведении работали и в темной теме */
+body.dark-mode .contact-tg:hover { color: #0088cc; }
+body.dark-mode .contact-ds:hover { color: #5865F2; }
