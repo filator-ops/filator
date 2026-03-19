@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Technical Profile</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -27,13 +30,31 @@
 
         <section id="projects" class="fade-in-delayed">
             <h2>Проекты</h2>
-            <div class="project-grid" id="project-container"></div>
+            <div class="project-grid" id="project-container">
+                </div>
+        </section>
+
+        <section id="contacts" class="fade-in-delayed">
+            <h2>Связь со мной</h2>
+            <div class="contact-grid">
+                
+                <a href="https://t.me/filator1" target="_blank" class="contact-item contact-tg">
+                    <i class="fab fa-telegram contact-icon"></i>
+                    <span>Telegram</span>
+                </a>
+
+                <div class="contact-item contact-ds" onclick="navigator.clipboard.writeText('egorzvanov').then(() => alert('Discord ник скопирован: egorzvanov'))" title="Нажми, чтобы скопировать ник">
+                    <i class="fab fa-discord contact-icon"></i>
+                    <span>Discord</span>
+                </div>
+            </div>
         </section>
 
         <footer class="fade-in-delayed">
             <p>© Разработано в 2026</p>
         </footer>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
