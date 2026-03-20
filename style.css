@@ -48,21 +48,34 @@ footer { margin-top: 50px; padding-bottom: 20px; opacity: 0.6; font-size: 0.9rem
     position: fixed; 
     top: 20px; 
     right: 20px;
-    width: 50px; /* Немного увеличили для пальца */
-    height: 50px; 
-    border-radius: 15px;
+    width: 40px; /* Уменьшили размер */
+    height: 40px; 
+    border-radius: 12px; /* Чуть острее углы под новый размер */
     border: none; 
     cursor: pointer; 
     background: white;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 1001;
-    /* Убираем синее выделение при нажатии на мобилках */
+    font-size: 18px; /* Уменьшили размер самой иконки (эмодзи) */
+    
+    /* Оставляем фиксы для мобилок */
     -webkit-tap-highlight-color: transparent; 
     touch-action: manipulation;
-    transition: transform 0.1s ease, background 0.3s ease;
+    transition: transform 0.1s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+/* Эффект при нажатии (визуальный отклик) */
+#theme-toggle:active {
+    transform: scale(0.9);
+}
+
+/* Темная тема */
+body.dark-mode #theme-toggle {
+    background: #1e293b;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
 /* Для темной темы убедимся, что кнопка контрастная */
