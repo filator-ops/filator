@@ -45,10 +45,31 @@ h1 span {
 }
 footer { margin-top: 50px; padding-bottom: 20px; opacity: 0.6; font-size: 0.9rem; }
 #theme-toggle {
-    position: fixed; top: 20px; right: 20px;
-    width: 45px; height: 45px; border-radius: 12px;
-    border: none; cursor: pointer; background: white;
+    position: fixed; 
+    top: 20px; 
+    right: 20px;
+    width: 50px; /* Немного увеличили для пальца */
+    height: 50px; 
+    border-radius: 15px;
+    border: none; 
+    cursor: pointer; 
+    background: white;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
+    /* Убираем синее выделение при нажатии на мобилках */
+    -webkit-tap-highlight-color: transparent; 
+    touch-action: manipulation;
+    transition: transform 0.1s ease, background 0.3s ease;
+}
+
+/* Для темной темы убедимся, что кнопка контрастная */
+body.dark-mode #theme-toggle {
+    background: #1e293b;
+    color: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
 }
 body.dark-mode { background-color: #0f172a; color: #f1f5f9; }
 body.dark-mode .project-card { background: #1e293b; border-color: #334155; }
