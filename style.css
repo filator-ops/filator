@@ -48,9 +48,9 @@ footer { margin-top: 50px; padding-bottom: 20px; opacity: 0.6; font-size: 0.9rem
     position: fixed; 
     top: 20px; 
     right: 20px;
-    width: 40px; /* Уменьшили размер */
+    width: 40px; 
     height: 40px; 
-    border-radius: 12px; /* Чуть острее углы под новый размер */
+    border-radius: 12px; 
     border: none; 
     cursor: pointer; 
     background: white;
@@ -59,26 +59,26 @@ footer { margin-top: 50px; padding-bottom: 20px; opacity: 0.6; font-size: 0.9rem
     align-items: center;
     justify-content: center;
     z-index: 1001;
-    font-size: 18px; /* Уменьшили размер самой иконки (эмодзи) */
+    font-size: 18px; 
     
-    /* Оставляем фиксы для мобилок */
+    
     -webkit-tap-highlight-color: transparent; 
     touch-action: manipulation;
     transition: transform 0.1s ease, background 0.3s ease, box-shadow 0.3s ease;
 }
-/* Эффект при нажатии (визуальный отклик) */
+
 #theme-toggle:active {
     transform: scale(0.9);
 }
 
-/* Темная тема */
+
 body.dark-mode #theme-toggle {
     background: #1e293b;
     color: white;
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
-/* Для темной темы убедимся, что кнопка контрастная */
+
 body.dark-mode #theme-toggle {
     background: #1e293b;
     color: white;
@@ -91,7 +91,7 @@ body.dark-mode #theme-toggle { background: #1e293b; color: white; }
 .fade-in { animation: fadeInUp 0.8s ease forwards; }
 .fade-in-delayed { opacity: 0; animation: fadeInUp 0.8s ease 0.3s forwards; }
 @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-/* Раздел контактов */
+
 #contacts {
     margin-top: 60px;
     margin-bottom: 40px;
@@ -133,13 +133,13 @@ body.dark-mode #theme-toggle { background: #1e293b; color: white; }
     height: 25px;
 }
 
-/* Адаптация для темной темы */
+
 body.dark-mode .contact-item {
     background: #1e293b;
     border-color: #334155;
     color: white;
 }
-/* --- РАЗДЕЛ КОНТАКТОВ (ИСПРАВЛЕННЫЙ) --- */
+
 #contacts {
     margin-top: 60px;
     margin-bottom: 40px;
@@ -170,34 +170,34 @@ body.dark-mode .contact-item {
     box-shadow: 0 10px 20px rgba(0,0,0,0.05);
 }
 
-/* Стили для иконок Font Awesome */
+
 .contact-icon {
-    font-size: 24px; /* Размер иконки */
+    font-size: 24px; 
 }
 
-/* Эффект при наведении на контакты */
+
 .contact-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 30px rgba(0,0,0,0.1);
 }
 
-/* Фирменные цвета при наведении */
+
 .contact-tg:hover {
-    color: #0088cc; /* Цвет Telegram */
+    color: #0088cc; 
     border-color: #0088cc;
 }
 
 .contact-ds:hover {
-    color: #5865F2; /* Цвет Discord */
+    color: #5865F2; 
     border-color: #5865F2;
 }
 
-/* Адаптация для темной темы */
+
 body.dark-mode .contact-item {
     background: #1e293b;
     border-color: #334155;
     color: white;
 }
-/* Чтобы цвета при наведении работали и в темной теме */
+
 body.dark-mode .contact-tg:hover { color: #0088cc; }
 body.dark-mode .contact-ds:hover { color: #5865F2; }
