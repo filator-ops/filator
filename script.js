@@ -26,7 +26,7 @@ const toggleBtn = document.getElementById('theme-toggle');
 const themeIcon = document.getElementById('theme-icon');
 
 function toggleTheme(e) {
-    // Предотвращаем стандартное поведение и "всплытие" события
+    
     if (e) e.preventDefault();
     
     document.body.classList.toggle('dark-mode');
@@ -34,21 +34,21 @@ function toggleTheme(e) {
     const isDark = document.body.classList.contains('dark-mode');
     themeIcon.innerText = isDark ? "🌙" : "☀️";
     
-    // Сохраняем выбор пользователя, чтобы тема не слетала при обновлении
+   
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
 
-    // Визуальный отклик для мобилок
+    
     toggleBtn.style.transform = "scale(0.9)";
     setTimeout(() => {
         toggleBtn.style.transform = "scale(1)";
     }, 100);
 }
 
-// Слушаем и клик, и касание для мгновенного отклика
+
 toggleBtn.addEventListener('click', toggleTheme);
 toggleBtn.addEventListener('touchstart', toggleTheme, {passive: false});
 
-// Проверка сохраненной темы при загрузке страницы
+
 if (localStorage.getItem('theme') === 'dark') {
     document.body.classList.add('dark-mode');
     themeIcon.innerText = "🌙";
