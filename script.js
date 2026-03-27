@@ -45,7 +45,7 @@ function updateLanguage() {
         document.getElementById('lang-text').innerText = currentLang.toUpperCase();
     }, 200);
 
-    
+  
     setTimeout(() => {
         targets.forEach(t => t.classList.remove('text-fade'));
     }, 400);
@@ -79,6 +79,7 @@ function toggleTheme(e) {
 
 toggleBtn.addEventListener('click', toggleTheme);
 toggleBtn.addEventListener('touchstart', toggleTheme, {passive: false});
+
 
 if (localStorage.getItem('theme') === 'dark') {
     document.body.classList.add('dark-mode');
