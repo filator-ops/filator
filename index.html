@@ -3,55 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Technical Profile</title>
+    <title>Tecnical Profile</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="bg-blob"></div>
     <div class="bg-blob2"></div>
 
-    <button id="theme-toggle" title="Сменить тему">
-        <span id="theme-icon">☀️</span>
-    </button>
+    <div class="controls">
+        <button id="theme-toggle" title="Сменить тему">
+            <span id="theme-icon">☀️</span>
+        </button>
+        <button id="lang-toggle" title="Change Language">
+            <span id="lang-text">RU</span>
+        </button>
+    </div>
 
     <div class="container">
         <header class="fade-in">
             <h1 id="main-title">Digital <span>Solutions</span></h1>
-            <p class="subtitle">Python Developer | Infrastructure Management</p>
+            <p class="subtitle lang-target" data-key="subtitle">Python разработчик | Системное администрирование</p>
         </header>
 
         <section id="about" class="fade-in-delayed">
-            <h2>Обо мне</h2>
-            <p>Занимаюсь разработкой Telegram-ботов и автоматизацией серверной инфраструктуры.</p>
+            <h2 class="lang-target" data-key="about-title">Обо мне</h2>
+            <p class="lang-target" data-key="about-text">Занимаюсь разработкой Telegram-ботов и автоматизацией серверной инфраструктуры.</p>
         </section>
 
         <section id="projects" class="fade-in-delayed">
-            <h2>Проекты</h2>
-            <div class="project-grid" id="project-container">
+            <h2 class="lang-target" data-key="projects-title">Проекты</h2>
+            <div class="project-grid">
+                
+                <div class="project-card">
+                    <h3 class="lang-target" data-key="p1-title">IP & Domain Checker</h3>
+                    <p class="project-desc lang-target" data-key="p1-desc">Инструмент для анализа IP-адресов и доменов через Telegram.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">aiogram</span>
+                        <span class="tech-tag">API</span>
+                    </div>
+                    <a href="https://t.me/ipchech_bot" target="_blank" class="project-btn lang-target" data-key="launch">Запустить</a>
                 </div>
+
+            </div>
         </section>
 
         <section id="contacts" class="fade-in-delayed">
-            <h2>Контакты</h2>
+            <h2 class="lang-target" data-key="contacts-title">Контакты</h2>
             <div class="contact-grid">
-                
                 <a href="https://t.me/filator1" target="_blank" class="contact-item contact-tg">
                     <i class="fab fa-telegram contact-icon"></i>
                     <span>Telegram</span>
                 </a>
-
-                <div class="contact-item contact-ds" onclick="navigator.clipboard.writeText('egorzvanov').then(() => alert('Discord ник скопирован: egorzvanov'))" title="Нажми, чтобы скопировать ник">
+                <div class="contact-item contact-ds" onclick="copyDiscord()">
                     <i class="fab fa-discord contact-icon"></i>
-                    <span>Discord</span>
+                    <span class="lang-target" data-key="discord">Discord</span>
                 </div>
             </div>
         </section>
 
         <footer class="fade-in-delayed">
-            <p>© Разработано в 2026</p>
+            <p class="lang-target" data-key="footer">© Разработано в 2026</p>
         </footer>
     </div>
 
