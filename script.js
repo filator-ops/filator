@@ -20,7 +20,7 @@ const translations = {
         "p1-title": "IP & Domain Checker",
         "p1-desc": "Professional tool for IP & Domain analysis via Telegram.",
         launch: "Launch",
-        "contacts-title": "Contact Me",
+        "contacts-title": "Contact",
         discord: "Discord",
         footer: "© Developed in 2026",
         copyMsg: "Nickname copied!"
