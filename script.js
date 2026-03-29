@@ -87,10 +87,15 @@ function checkTimeAndTheme() {
 function createStaticStars() {
     const container = document.getElementById('stars-container');
     if (!container) return;
-    for (let i = 0; i < 80; i++) {
+    
+    
+    const isMobile = window.innerWidth <= 768;
+    const starCount = isMobile ? 30 : 80; 
+    
+    for (let i = 0; i < starCount; i++) {
         const star = document.createElement('div');
         star.className = 'static-star';
-        const size = Math.random() 
+        const size = Math.random() * 2 + 1; 
         star.style.width = `${size}px`;
         star.style.height = `${size}px`;
         star.style.left = Math.random() * 100 + 'vw';
