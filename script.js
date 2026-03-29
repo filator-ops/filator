@@ -7,7 +7,7 @@ const translations = {
         "p1-title": "IP & Domain Checker",
         "p1-desc": "Инструмент для анализа IP-адресов и доменов через Telegram.",
         launch: "Запустить",
-        "contacts-title": "Контакты", 
+        "contacts-title": "Контакты",
         discord: "Discord",
         footer: "© Разработано в 2026",
         copyMsg: "Ник скопирован!"
@@ -20,14 +20,14 @@ const translations = {
         "p1-title": "IP & Domain Checker",
         "p1-desc": "A tool to analyze IPs and domains via Telegram bot.",
         launch: "Launch",
-        "contacts-title": "Contact", 
+        "contacts-title": "Contact",
+        discord: "Discord",
         footer: "© Developed in 2026",
         copyMsg: "Nickname copied!"
     }
 };
 
 let currentLang = localStorage.getItem('lang') || 'ru';
-
 
 function updateLanguage() {
     const targets = document.querySelectorAll('.lang-target');
@@ -41,18 +41,16 @@ function updateLanguage() {
             }
         });
         document.getElementById('lang-text').innerText = currentLang.toUpperCase();
-    }, 200);
+    }, 150); 
 
-    setTimeout(() => targets.forEach(t => t.classList.remove('text-fade')), 400);
+    setTimeout(() => targets.forEach(t => t.classList.remove('text-fade')), 300);
 }
-
 
 document.getElementById('lang-toggle').addEventListener('click', () => {
     currentLang = currentLang === 'ru' ? 'en' : 'ru';
     localStorage.setItem('lang', currentLang);
     updateLanguage();
 });
-
 
 function copyDiscord() {
     navigator.clipboard.writeText('egorzvanov').then(() => {
@@ -70,9 +68,7 @@ function checkTimeAndTheme() {
     const mskTime = new Date(utc + (3600000 * 3));
     const hour = mskTime.getHours();
 
-    // Тема с 20:00 до 05:00 по МСК 
     const isNight = hour >= 20 || hour < 5;
-    
 
     if (isNight) {
         document.body.classList.add('dark-mode');
@@ -87,13 +83,14 @@ function checkTimeAndTheme() {
     }
 }
 
+
 function createStaticStars() {
     const container = document.getElementById('stars-container');
     if (!container) return;
-    for (let i = 0; i < 150; i++) {
+    for (let i = 0; i < 80; i++) {
         const star = document.createElement('div');
         star.className = 'static-star';
-        const size = Math.random() * 2 + 0.5;
+        const size = Math.random() 
         star.style.width = `${size}px`;
         star.style.height = `${size}px`;
         star.style.left = Math.random() * 100 + 'vw';
@@ -108,7 +105,6 @@ function startMeteors() {
     const spawn = () => {
         if (!document.body.classList.contains('dark-mode')) return;
         createSingleMeteor();
-        
         meteorInterval = setTimeout(spawn, Math.random() * 10000 + 5000);
     };
     spawn();
@@ -121,7 +117,6 @@ function createSingleMeteor() {
     meteor.style.top = Math.random() * 50 + 'vh';
     meteor.style.left = (Math.random() * 50 + 50) + 'vw';
     container.appendChild(meteor);
-   
     setTimeout(() => meteor.remove(), 800);
 }
 
@@ -132,9 +127,6 @@ function removeSpace() {
     starsCreated = false;
 }
 
-
 checkTimeAndTheme();
-
 setInterval(checkTimeAndTheme, 60000);
-
 updateLanguage();
