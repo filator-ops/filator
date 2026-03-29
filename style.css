@@ -23,21 +23,19 @@ body {
 #lang-toggle:hover { border-color: #007bff; color: #007bff; transform: translateY(-2px); }
 
 
-.bg-blob, .bg-blob2 { position: fixed; width: 300px; height: 300px; background: linear-gradient(135deg, #007bff, #00d2ff); filter: blur(80px); opacity: 0.1; z-index: -1; border-radius: 50%; transition: opacity 1s ease; }
+.bg-blob, .bg-blob2 { position: fixed; width: 300px; height: 300px; background: linear-gradient(135deg, #007bff, #00d2ff); filter: blur(80px); opacity: 0.1; z-index: -1; border-radius: 50%; }
 .bg-blob { top: -50px; left: -50px; } .bg-blob2 { bottom: -50px; right: -50px; }
 
 
 h1 span {
     background: linear-gradient(90deg, #007bff, #00d2ff);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 700;
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent; font-weight: 700;
 }
 h2 { margin-top: 30px; margin-bottom: 20px; }
 .subtitle { margin-top: 5px; opacity: 0.8; font-weight: 300; }
-
 #about p { margin-bottom: 30px; opacity: 0.9; line-height: 1.6; }
+
 
 .project-card {
     background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px);
@@ -45,30 +43,18 @@ h2 { margin-top: 30px; margin-bottom: 20px; }
     padding: 30px 20px; border-radius: 20px; 
     max-width: 340px; margin: 30px auto;
     box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 .project-card:hover { transform: translateY(-8px); box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
-
 .project-title { margin-top: 0; margin-bottom: 10px; font-size: 1.4rem; }
 .project-desc { font-size: 0.9rem; margin-bottom: 20px; line-height: 1.5; opacity: 0.8; }
 
-
 .tech-stack { display: flex; gap: 8px; justify-content: center; margin-bottom: 20px; flex-wrap: wrap; }
-.tech-tag {
-    background: #007bff15; color: #007bff;
-    padding: 5px 12px; border-radius: 8px; font-size: 0.8rem; font-weight: 600;
-}
-
+.tech-tag { background: #007bff15; color: #007bff; padding: 5px 12px; border-radius: 8px; font-size: 0.8rem; font-weight: 600; }
 
 .project-btn { 
-    display: inline-block; 
-    background: #007bff; 
-    color: white; 
-    text-decoration: none; 
-    padding: 12px 35px; 
-    border-radius: 12px; 
-    font-weight: 600; 
-    transition: 0.3s;
+    display: inline-block; background: #007bff; color: white; text-decoration: none; 
+    padding: 12px 35px; border-radius: 12px; font-weight: 600; transition: 0.3s;
     box-shadow: 0 4px 12px rgba(0, 123, 255, 0.15);
 }
 .project-btn:hover { background: #0056b3; transform: scale(1.03); }
@@ -79,8 +65,7 @@ h2 { margin-top: 30px; margin-bottom: 20px; }
     background: rgba(255,255,255,0.9); padding: 10px 20px; border-radius: 14px;
     display: flex; align-items: center; justify-content: center; gap: 10px;
     text-decoration: none; color: inherit; font-weight: 600; width: 190px;
-    transition: 0.3s ease, border-color 0.3s ease;
-    cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.03); font-size: 0.9rem;
+    transition: 0.3s ease; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.03); font-size: 0.9rem;
 }
 .contact-item:hover { transform: translateY(-3px); box-shadow: 0 8px 15px rgba(0,0,0,0.06); }
 .contact-tg:hover { border-color: #0088cc; color: #0088cc; }
@@ -89,17 +74,15 @@ h2 { margin-top: 30px; margin-bottom: 20px; }
 footer { margin-top: 50px; margin-bottom: 20px; opacity: 0.6; font-size: 0.9rem; }
 
 
-body.dark-mode { 
-    background-color: black; 
-    color: #f8fafc; 
-} 
 
-body.dark-mode .bg-blob, body.dark-mode .bg-blob2 { 
-    opacity: 0; 
-} 
+body.dark-mode { background-color: black; color: #f8fafc; } 
+
+
+body.dark-mode .bg-blob, body.dark-mode .bg-blob2 { display: none; } 
 
 body.dark-mode .project-card, body.dark-mode .contact-item { background: rgba(15, 23, 42, 0.7); border-color: rgba(255, 255, 255, 0.1); color: white; }
 body.dark-mode #lang-toggle { border-color: rgba(255, 255, 255, 0.15); }
+
 
 
 #stars-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; overflow: hidden; }
@@ -107,51 +90,37 @@ body.dark-mode #lang-toggle { border-color: rgba(255, 255, 255, 0.15); }
 
 .static-star {
     position: absolute; background: #fff; border-radius: 50%;
-   
-    box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.3); 
-    animation: twinkle ease-in-out infinite; opacity: 0;
+    animation: twinkle alternate ease-in-out infinite; 
+    will-change: opacity; 
 }
-@keyframes twinkle { 0%, 100% { opacity: 0.3; transform: scale(1); } 50% { opacity: 1; transform: scale(1.15); box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.5); } }
-
+@keyframes twinkle { 
+    0% { opacity: 0.1; } 
+    100% { opacity: 0.8; } 
+}
 
 
 .shooting-star {
-    position: absolute; 
-    width: 3px; height: 3px;
+    position: absolute; width: 3px; height: 3px;
     background: #fff; border-radius: 50%; 
-    
-    
     box-shadow: 0 0 10px #fff, 0 0 6px 3px skyblue, 0 0 4px #fff; 
-    
     animation: meteor-animation 0.7s linear forwards;
     will-change: transform;
 }
-
-
 .shooting-star::after {
     content: ''; position: absolute; top: 50%; left: 0;
-    
-    
     width: 140px; height: 2px; 
-    
-   
     background: linear-gradient(to left, rgba(255,255,255,0.9), rgba(255,255,255,0.1), transparent);
     transform: translateY(-50%);
 }
-
 @keyframes meteor-animation {
     0% { transform: rotate(-35deg) translateX(0); opacity: 0; }
-    
     20% { opacity: 1; }
-    
     100% { transform: rotate(-35deg) translateX(-800px); opacity: 0; }
 }
 
 
-
-.text-fade { animation: textFadeAnim 0.4s ease; }
+.text-fade { animation: textFadeAnim 0.3s ease; }
 @keyframes textFadeAnim { 0% { opacity: 1; } 50% { opacity: 0; transform: translateY(2px); } 100% { opacity: 1; } }
 .fade-in { animation: fadeInUp 0.8s ease forwards; }
-.fade-in-delayed { opacity: 0; animation: fadeInUp 0.8s ease 0.4s forwards; }
+.fade-in-delayed { opacity: 0; animation: fadeInUp 0.8s ease 0.3s forwards; }
 @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-   
